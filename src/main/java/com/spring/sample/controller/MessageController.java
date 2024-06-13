@@ -15,14 +15,17 @@ public class MessageController {
 			@PathVariable String msgFlag,
 			@RequestParam(name="mid", defaultValue = "", required = false) String mid
 			) {
+		
 		if(msgFlag.equals("memberInputOk")) {
-			model.addAttribute("msg",mid + "님 회원가입되었습니다.");
-			model.addAttribute("url","/0611/test15");
+			model.addAttribute("msg", mid + "님 회원 가입되었습니다.");
+			model.addAttribute("url", "/0611/test15");
 		}
 		else if(msgFlag.equals("memberInputNo")) {
-			model.addAttribute("msg","회원가입실패");
-			model.addAttribute("url","/0611/index");
+			model.addAttribute("msg", "회원 가입 실패~~");
+			model.addAttribute("url", "/0611/index");
 		}
+		
 		return "include/message";
 	}
+	
 }
